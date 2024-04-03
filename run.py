@@ -5,11 +5,11 @@ import os
 import torch
 import torch.nn.functional as F
 
-from pixel_size import pixel_sum
+from sidewalk_depthanything.pixel_size import pixel_sum
 from torchvision.transforms import Compose
 from tqdm import tqdm
-from depth_anything.dpt import DepthAnything
-from depth_anything.util.transform import Resize, NormalizeImage, PrepareForNet
+from sidewalk_depthanything.depth_anything.dpt import DepthAnything
+from sidewalk_depthanything.depth_anything.util.transform import Resize, NormalizeImage, PrepareForNet
 
 
 if __name__ == '__main__':
@@ -122,6 +122,6 @@ if __name__ == '__main__':
             cv2.imwrite(os.path.join(args.outdir, filename[:filename.rfind('.')] + '_img_depth.png'), final_result)
         sum_first_row = np.sum(object_width_cm[0])
 
-        print("Primeiro vetor:", str(object_width_cm[0]))
+        # print("Primeiro vetor:", str(object_width_cm[0]))
         # print("Largura estimada do objeto em cm:", object_width_cm)
-        print("Distancia do começo ao final da imagem: " + str(pixel_sum(object_width_cm[200])))
+        print("Distancia do começo ao final da imagem:" + str(pixel_sum(object_width_cm[200])))
