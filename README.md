@@ -33,6 +33,13 @@ que valoriza mais os pixels que estão mais perto da tela, pois eles tem mais ch
 de estarem precisos. E então, a média e a mediana são calculadas para estimar a
 distância da calçada
 
+## Exemplo de imagem do depthanything
+
+![exemplo](./Detectron2Results/exampledepth.png)
+
+A imagem acima mostra como funciona o algoritmo de profundidade, sendo que, quanto
+mais escuro estiver a imagem, mais profundidade ela tem na foto
+
 ## Resultados
 
 *Os valores calculados estão estimados em centímetros*
@@ -89,3 +96,21 @@ distância da calçada
 - Mediana direita: 159.87
 - Média esquerda: 276.05
 - Mediana esquerda: 275.79
+
+## Outras biliotecas de reconhecimento
+
+Existem outras bibliotecas de reconhecimento de padrões, tal como o OneFormer.
+Ela possui vantagens e desvantagens no contexto que estamos trabalhando.
+
+Uma vantagem é que ela possui um treinamento muito mais assertivo, resultando
+em resutlados muito mais satisfatórios. Contudo, leva aproximadamente 30 minutos 
+para rodar as configurações dessa bilbioteca.
+
+<div>
+    <img src="./Detectron2Results/Foto5Panoptic.png" alt="Comparacao" style="float:left; margin-right: 10px;" />
+    <img src="./Detectron2Results/oneformer.png" style="float:left; margin-right: 10px;" />
+</div>
+
+Acima é possível notar a diferença entre usar a detectron2 e o oneFormer, respectivamente.
+É possível notar que a divisão é muito mais precisa, mas mesmo assim ainda não
+consegue detectar objetos que podem obstruir a passagem.
